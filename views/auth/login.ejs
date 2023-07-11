@@ -1,0 +1,17 @@
+<h1>Login</h1>
+
+<form action="/login" method="POST">
+  <label>
+    Username
+    <input name="username" type="text" required value="<%= typeof errorMessage !== 'undefined' ? payload.username : '' %>" />
+  </label>
+  <label>
+    Password
+    <input name="password" type="password" required />
+  </label>
+  <button type="submit">Login</button>
+</form>
+
+<% if (typeof errorMessage !== 'undefined') { %>
+<p style="color: red"><%= errorMessage %></p>
+<% } %>
